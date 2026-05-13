@@ -1,17 +1,20 @@
 <!DOCTYPE html>
-<html>
+<html lang="pt-BR">
 <head>
     <meta charset="utf-8" />
-    <title>Compra de Pizzas</title>
+    <title>Pizzaria da Vila 🍕</title>
     <link rel="stylesheet" href="style.css" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link href="https://fonts.googleapis.com/css?family=Hepta+Slab:400,700|Lato:400,700&display=swap" rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700;900&family=Nunito:wght@400;600;700&display=swap" rel="stylesheet">
 </head>
 <body>
+
+    <!-- Templates ocultos -->
     <div class="models">
         <div class="pizza-item">
             <a href="">
-                <div class="pizza-item--img"><img src="" /></div>
+                <div class="pizza-item--img"><img src="" alt="" /></div>
                 <div class="pizza-item--add">+</div>
             </a>
             <div class="pizza-item--price">R$ --</div>
@@ -19,26 +22,41 @@
             <div class="pizza-item--desc">--</div>
         </div>
         <div class="cart--item">
-            <img src="" />
-            <div class="cart--item-nome">--</div>
+            <img src="" alt="" />
+            <div class="cart--item-info">
+                <div class="cart--item-nome">--</div>
+                <div class="cart--item-price">R$ --</div>
+            </div>
             <div class="cart--item--qtarea">
-                <button class="cart--item-qtmenos">-</button>
+                <button class="cart--item-qtmenos">−</button>
                 <div class="cart--item--qt">1</div>
                 <button class="cart--item-qtmais">+</button>
             </div>
         </div>
     </div>
+
+    <!-- Header mobile -->
     <header>
-        <div class="menu-openner"><span>0</span>🛒</div>
+        <div class="header-brand">🍕 Pizzaria da Vila</div>
+        <div class="menu-openner"><span>0</span> Ver carrinho</div>
     </header>
+
+    <!-- Conteúdo principal -->
     <main>
-        <h1>Pizzas</h1>
+        <div class="hero">
+            <h1>Pizzaria<br><em>da Vila</em></h1>
+            <p>Feita com amor, assada na hora. Escolha a sua favorita! 🔥</p>
+        </div>
         <div class="pizza-area"></div>
     </main>
+
+    <!-- Carrinho lateral -->
     <aside>
         <div class="cart--area">
-            <div class="menu-closer">❌</div>
-            <h1>Suas Pizzas</h1>
+            <div class="cart-header">
+                <h2>🛒 Seu Pedido</h2>
+                <button class="menu-closer" title="Fechar">✕</button>
+            </div>
             <div class="cart"></div>
             <div class="cart--details">
                 <div class="cart--totalitem subtotal">
@@ -46,52 +64,170 @@
                     <span>R$ --</span>
                 </div>
                 <div class="cart--totalitem desconto">
-                    <span>Desconto (-10%)</span>
+                    <span>🎉 Desconto (10%)</span>
                     <span>R$ --</span>
                 </div>
                 <div class="cart--totalitem total big">
                     <span>Total</span>
                     <span>R$ --</span>
                 </div>
-                <div class="cart--finalizar">Finalizar a compra</div>
+                <button class="cart--finalizar">Finalizar Pedido 🍕</button>
             </div>
         </div>
     </aside>
+
+    <!-- Modal de detalhe da pizza -->
     <div class="pizzaWindowArea">
         <div class="pizzaWindowBody">
-            <div class="pizzaInfo--cancelMobileButton">Voltar</div>
+            <button class="pizzaInfo--cancelMobileButton">← Voltar</button>
             <div class="pizzaBig">
-                <img src="" />
+                <img src="" alt="" />
             </div>
             <div class="pizzaInfo">
-                <h1>--</h1>
+                <h2>--</h2>
                 <div class="pizzaInfo--desc">--</div>
+
                 <div class="pizzaInfo--sizearea">
                     <div class="pizzaInfo--sector">Tamanho</div>
                     <div class="pizzaInfo--sizes">
-                        <div data-key="0" class="pizzaInfo--size">PEQUENA <span>--</span></div>
-                        <div data-key="1" class="pizzaInfo--size">MÉDIO <span>--</span></div>
-                        <div data-key="2" class="pizzaInfo--size selected">GRANDE <span>--</span></div>
+                        <div data-key="0" class="pizzaInfo--size">
+                            <span class="size-label">P</span>
+                            <span class="size-weight">--</span>
+                        </div>
+                        <div data-key="1" class="pizzaInfo--size">
+                            <span class="size-label">M</span>
+                            <span class="size-weight">--</span>
+                        </div>
+                        <div data-key="2" class="pizzaInfo--size selected">
+                            <span class="size-label">G</span>
+                            <span class="size-weight">--</span>
+                        </div>
                     </div>
                 </div>
+
                 <div class="pizzaInfo--pricearea">
-                    <div class="pizzaInfo--sector">Preço</div>
+                    <div class="pizzaInfo--sector">Preço & Quantidade</div>
                     <div class="pizzaInfo--price">
                         <div class="pizzaInfo--actualPrice">R$ --</div>
                         <div class="pizzaInfo--qtarea">
-                            <button class="pizzaInfo--qtmenos">-</button>
+                            <button class="pizzaInfo--qtmenos">−</button>
                             <div class="pizzaInfo--qt">1</div>
                             <button class="pizzaInfo--qtmais">+</button>
                         </div>
                     </div>
                 </div>
-                <div class="pizzaInfo--addButton">Adicionar ao carrinho</div>
-                <div class="pizzaInfo--cancelButton">Cancelar</div>
+
+                <div class="modal-actions">
+                    <button class="pizzaInfo--addButton">🛒 Adicionar ao carrinho</button>
+                    <button class="pizzaInfo--cancelButton">Cancelar</button>
+                </div>
             </div>
         </div>
     </div>
 
-    <script type="text/javascript" src="pizzas.js"></script>
-    <script type="text/javascript" src="script.js"></script>
+    <!-- Modal de confirmação do pedido -->
+    <div class="order-modal">
+        <div class="order-modal--body">
+
+            <!-- STEP 1: Resumo do pedido -->
+            <div class="order-step" id="step-1">
+                <div class="order-modal--icon">🍕</div>
+                <h2>Resumo do Pedido</h2>
+                <ul class="order-summary"></ul>
+                <div class="order-total">
+                    Total com desconto: <strong class="order-total-value">R$ --</strong>
+                </div>
+                <div class="order-modal--actions">
+                    <button class="order-modal--close">Cancelar</button>
+                    <button class="btn-next" data-next="2">Continuar →</button>
+                </div>
+            </div>
+
+            <!-- STEP 2: Dados do cliente -->
+            <div class="order-step hidden" id="step-2">
+                <div class="order-modal--icon">📋</div>
+                <h2>Seus Dados</h2>
+                <div class="checkout-fields">
+                    <div class="field-group">
+                        <label for="field-name">Nome completo</label>
+                        <input type="text" id="field-name" placeholder="Ex: João Silva" />
+                    </div>
+                    <div class="field-group">
+                        <label for="field-phone">Telefone / WhatsApp</label>
+                        <input type="tel" id="field-phone" placeholder="(11) 99999-9999" />
+                    </div>
+                    <div class="field-group">
+                        <label for="field-address">Endereço de entrega</label>
+                        <input type="text" id="field-address" placeholder="Rua, número, bairro" />
+                    </div>
+                    <div class="field-group">
+                        <label for="field-obs">Observações (opcional)</label>
+                        <input type="text" id="field-obs" placeholder="Ex: sem cebola, portão azul..." />
+                    </div>
+                </div>
+                <div class="order-modal--actions">
+                    <button class="btn-back" data-back="1">← Voltar</button>
+                    <button class="btn-next" data-next="3">Continuar →</button>
+                </div>
+            </div>
+
+            <!-- STEP 3: Forma de pagamento -->
+            <div class="order-step hidden" id="step-3">
+                <div class="order-modal--icon">💳</div>
+                <h2>Pagamento</h2>
+                <div class="payment-options">
+                    <label class="payment-option">
+                        <input type="radio" name="payment" value="dinheiro" />
+                        <div class="payment-card">
+                            <span class="payment-icon">💵</span>
+                            <span class="payment-label">Dinheiro</span>
+                        </div>
+                    </label>
+                    <label class="payment-option">
+                        <input type="radio" name="payment" value="pix" />
+                        <div class="payment-card">
+                            <span class="payment-icon">📱</span>
+                            <span class="payment-label">Pix</span>
+                        </div>
+                    </label>
+                    <label class="payment-option">
+                        <input type="radio" name="payment" value="credito" />
+                        <div class="payment-card">
+                            <span class="payment-icon">💳</span>
+                            <span class="payment-label">Crédito</span>
+                        </div>
+                    </label>
+                    <label class="payment-option">
+                        <input type="radio" name="payment" value="debito" />
+                        <div class="payment-card">
+                            <span class="payment-icon">🏦</span>
+                            <span class="payment-label">Débito</span>
+                        </div>
+                    </label>
+                </div>
+                <div class="troco-area hidden">
+                    <label for="field-troco">Troco para quanto?</label>
+                    <input type="text" id="field-troco" placeholder="Ex: R$ 100,00" />
+                </div>
+                <div class="order-modal--actions">
+                    <button class="btn-back" data-back="2">← Voltar</button>
+                    <button class="order-modal--confirm">Confirmar Pedido 🍕</button>
+                </div>
+            </div>
+
+            <!-- STEP 4: Sucesso -->
+            <div class="order-step hidden" id="step-4">
+                <div class="order-modal--icon success-anim">🎉</div>
+                <h2>Pedido Confirmado!</h2>
+                <p class="success-msg">Seu pedido foi recebido e está sendo preparado com muito carinho. Tempo estimado: <strong>40 minutos</strong>.</p>
+                <div class="success-detail"></div>
+                <button class="btn-done">Fechar</button>
+            </div>
+
+        </div>
+    </div>
+
+    <script src="pizzas.js"></script>
+    <script src="script.js"></script>
 </body>
 </html>
